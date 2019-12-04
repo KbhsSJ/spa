@@ -1,0 +1,15 @@
+<h1>Buscando:  <small>{{ termino | uppercase }}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No existen resultados con el termino de buscada {{ termino }}
+    </div>
+  </div>
+</div>
+
+
+<div class="card-columns">
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="foo" [index]="foo.idx" *ngFor="let foo of heroes; let i = index"></app-heroe-tarjeta>
+</div>
